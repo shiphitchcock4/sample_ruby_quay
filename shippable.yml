@@ -34,15 +34,14 @@ build:
     - ls -al
 
   post_ci:
-    - docker build  -t=quay.io/shippablequay/hitchcock4_sample_ruby
+    
     - docker push quay.io/shippablequay/hitchcock4_sample_python
 
 integrations:
   hub:
-    - integrationName: ship-docker
-      type: docker
-      branches:
-        only:
-          - master   
+    - integrationName: ship-quay
+      type: quay
+ 
+       
 
 
