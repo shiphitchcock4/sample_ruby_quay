@@ -21,10 +21,10 @@ env:
 
 build:
   pre_ci:
-    - docker build -t=shippabledocker/hitchcock4_sample_ruby .
+    - docker build -t=quay.io/shippablequay/hitchcock4_sample_ruby .
 
   pre_ci_boot:
-    image_name: shippabledocker/hitchcock4_sample_ruby
+    image_name: quay.io/shippablequay/hitchcock4_sample_python
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -34,7 +34,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/hitchcock4_sample_ruby
+    - docker push quay.io/shippablequay/hitchcock4_sample_python
 
 integrations:
   hub:
